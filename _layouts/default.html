@@ -14,17 +14,25 @@
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
     <header class="page-header" role="banner">
+  <div class="header-content-wrapper">
+    <img src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="Jasem Khan Profile" class="profile-image">
+
+    <div class="header-text-container">
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-      <a href="https://github.com/jasemkhan2/" class="btn">GitHub</a>
-<a href="https://www.linkedin.com/in/jasem-abdul-javeed-khan-08b13b203/" class="btn">LinkedIn</a>
-<a href="mailto:jasemajkhan@gmail.com" class="btn">Email</a>
-    </header>
+    </div>
+  </div>
+
+  <a href="https://github.com/jasemkhan2/" class="btn">GitHub</a>
+  <a href="https://www.linkedin.com/in/jasem-abdul-javeed-khan-08b13b203/" class="btn">LinkedIn</a>
+  <a href="mailto:jasemajkhan@gmail.com" class="btn">Email</a>
+</header>
     <main id="content" class="main-content" role="main">
       {{ content }}
     </main>
   </body>
 
 </html>
+
 
 
