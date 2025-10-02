@@ -1,6 +1,6 @@
 /* GLOBAL STYLES */
 :root {
-    --primary-color: #3498db; /* A nice blue */
+    --primary-color: #018c0b; /* A nice dark green */
     --secondary-color: #2c3e50; /* Darker blue/grey for contrast */
     --text-color: #333;
     --background-color: #f4f4f4;
@@ -214,3 +214,4 @@ footer {
   justify-content: center;
   align-items: center; 
 }
+
