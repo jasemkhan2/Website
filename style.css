@@ -27,12 +27,46 @@ body {
     padding: 20px;
 }
 
-/* HEADER / HERO SECTION */
+/* ------------------------------------------------------------------- */
+/* HEADER / HERO SECTION - MERGED STYLES FOR IMAGE AND FLEXBOX LAYOUT  */
+/* ------------------------------------------------------------------- */
+
 .hero {
     background: var(--secondary-color);
     color: var(--white);
     padding: 80px 20px;
-    text-align: center;
+    /* OVERRIDE: Remove text-align: center; from hero so we can control alignment with Flexbox */
+    /* text-align: center; */ 
+    
+    /* NEW: Flexbox setup for the entire banner content (for centering blocks) */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+/* NEW: Container for the image and text (side-by-side) */
+.header-content-wrapper {
+    display: flex; 
+    align-items: center; 
+    gap: 30px; 
+    margin-bottom: 25px; 
+    max-width: 90%; 
+}
+
+/* NEW: Styles for the circular image */
+.profile-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid var(--white); /* Using CSS variable for white frame */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* NEW: Styles for the text container next to the image */
+.header-text-container {
+    text-align: left;
 }
 
 .hero h1 {
@@ -42,8 +76,25 @@ body {
 
 .hero .subtitle {
     font-size: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Will be overridden by button wrapper margin-top, but kept for general use */
     opacity: 0.8;
+}
+
+/* NEW: Container for the buttons (side-by-side) */
+.header-buttons {
+    display: flex; /* Makes the buttons line up in a row */
+    gap: 10px; /* Adds 10px spacing between each button */
+    /* margin-top: 25px; - Removed, using margin on social-links instead for cleanliness */
+    justify-content: center;
+    align-items: center;
+}
+
+/* OLD: Renamed social-links to target the new wrapper if you update your HTML */
+/* If you keep the class as social-links in your HTML for buttons, this works */
+.social-links {
+    margin-top: 20px; /* Add vertical space below subtitle/text */
+    display: flex; /* Ensure the buttons themselves are flex to line up */
+    gap: 10px; /* Space between links */
 }
 
 .social-links a {
@@ -51,7 +102,7 @@ body {
     background: var(--white);
     text-decoration: none;
     padding: 8px 15px;
-    margin: 0 5px;
+    /* margin: 0 5px; - Removed, using gap on parent container */
     border-radius: 5px;
     transition: background 0.3s, color 0.3s;
 }
@@ -61,7 +112,9 @@ body {
     color: var(--white);
 }
 
-/* SECTION STYLES */
+/* ------------------------------------------------------------------- */
+/* SECTION STYLES (NO CHANGES)                                         */
+/* ------------------------------------------------------------------- */
 .section {
     padding: 40px 0;
     border-bottom: 1px solid #ddd;
@@ -166,52 +219,13 @@ footer {
     .hero .subtitle {
         font-size: 1em;
     }
+    /* NEW: Stack image and text vertically on small screens */
+    .header-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .header-text-container {
+        text-align: center;
+    }
 }
-
-/* --- FLEXBOX STYLES FOR IMAGE AND TEXT --- */
-
-/* 1. Make the header center its content */
-.page-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers the whole block (image + text + buttons) */
-  justify-content: center;
-}
-
-/* 2. The container for the image and text */
-.header-content-wrapper {
-  display: flex; /* Lines up children (image and text) horizontally */
-  align-items: center; /* Vertically centers the image and text with respect to each other */
-  gap: 30px; /* Space between the image and the text */
-  margin-bottom: 25px; /* Adds space above the buttons */
-  max-width: 90%; /* Prevents wrapper from getting too wide on huge screens */
-}
-
-/* 3. The circular, framed image style */
-.profile-image {
-  border-radius: 50%; /* Makes it circular */
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border: 4px solid #ffffff; /* The white frame */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  /* Removed old centering styles */
-}
-
-/* 4. Ensure text is aligned to the left next to the image */
-.header-text-container {
-  text-align: left;
-}
-
-/* --- STYLES TO LINE UP BUTTONS HORIZONTALLY --- */
-
-.header-buttons {
-  display: flex; /* Makes the buttons line up in a row */
-  gap: 10px; /* Adds 10px spacing between each button */
-  margin-top: 25px; /* Adds space above the buttons, separating them from the text/image */
-  
-  /* Centers the buttons within the page-header */
-  justify-content: center;
-  align-items: center; 
-}
-
