@@ -66,7 +66,7 @@ body {
 
 /* NEW: Styles for the text container next to the image */
 .header-text-container {
-    text-align: left;
+    text-align: center;
 }
 
 .hero h1 {
@@ -229,3 +229,4 @@ footer {
         text-align: center;
     }
 }
+
