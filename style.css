@@ -202,3 +202,15 @@ footer {
 .header-text-container {
   text-align: left;
 }
+
+/* --- STYLES TO LINE UP BUTTONS HORIZONTALLY --- */
+
+.header-buttons {
+  display: flex; /* Makes the buttons line up in a row */
+  gap: 10px; /* Adds 10px spacing between each button */
+  margin-top: 25px; /* Adds space above the buttons, separating them from the text/image */
+  
+  /* Centers the buttons within the page-header */
+  justify-content: center;
+  align-items: center; 
+}
